@@ -42,41 +42,72 @@ export default function Signup({ setUser, setLogin }) {
   }
   return (
     <StyledForm>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          createAccount();
-        }}
-      >
-        <label>
-          Email
+      <Container>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            createAccount();
+          }}
+        >
+          <StyledInput>
+            <label>
+              <input
+                className="email"
+                type="email"
+                required
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </label>
+          </StyledInput>
+          <StyledInput>
+            <label>
+              <input
+                className="password"
+                type="password"
+                required
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+          </StyledInput>
+          <StyledInput>
+            <input className="button" type="submit" value="Create Account" />
+          </StyledInput>
+        </form>
+        <StyledInput>
           <input
-            className="email"
-            type="email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
+            className="button"
+            type="submit"
+            color="green"
+            value="Log In"
+            onClick={logIn}
           />
-        </label>
-        <label>
-          Password
-          <input
-            className="password"
-            type="password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <input className="button" type="submit" value="Create Account" />
-      </form>
-      <input className="button" type="submit" value="Log In" onClick={logIn} />
+        </StyledInput>
+      </Container>
     </StyledForm>
   );
 }
 
 const StyledForm = styled.div`
-  margin: 12% auto;
-  background-color: #f7f7f9;
-  border: 3px solid #f1f1f1;
-  width: 380px;
-  height: 390px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 40%;
+  width: 20%;
+  background: rgba(255, 255, 255, 0.15);
+`;
+
+const StyledInput = styled.div`
+  font-size: 2em;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 `;

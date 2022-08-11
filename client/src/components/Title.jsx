@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function Title() {
   return (
     <StyledTitle>
-      <header>JOKE TITLE?</header>
+      <header>Jokester</header>
     </StyledTitle>
   );
 }
@@ -12,7 +12,7 @@ function Title() {
 export default Title;
 
 const StyledTitle = styled.form`
-  color: blue;
+  color: gray;
   font-size: 10em;
   text-align: center;
 `;
