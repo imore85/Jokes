@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Main from './Main';
+import Title from './Title';
+import Signup from './Signup';
 
 function App() {
+  const [user, setUser] = useState();
+  const [login, setLogin] = useState(false);
   return (
     <div>
-      <h1>Jokes</h1>
+      <Title />
+      {login ? (
+        <Main user={user} />
+      ) : (
+        <Signup setUser={setUser} setLogin={setLogin} />
+      )}
     </div>
   );
 }
